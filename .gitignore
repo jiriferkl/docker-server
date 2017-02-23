@@ -1,1 +1,3 @@
 _db
+htdocs/*
+!htdocs/index.php

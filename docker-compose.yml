@@ -1,9 +1,11 @@
 version: "3"
 services:
   php:
-    image: php:fpm
+    build: ./dckr/php
     volumes:
       - ./htdocs:/htdocs
+    links:
+      - db
 
   nginx:
     image: nginx:latest
