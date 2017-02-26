@@ -3,19 +3,12 @@ services:
   php:
     build: ./dckr/php
     volumes:
-      - ./htdocs:/htdocs
+      - ./htdocs:/var/www/html/
+      - ./config/apache2.conf:/etc/apache2/apache2.conf
     links:
       - db
-
-  nginx:
-    image: nginx:latest
     ports:
       - 80:80
-    volumes:
-      - ./htdocs:/htdocs
-      - ./config/nginx.conf:/etc/nginx/conf.d/default.conf
-    links:
-      - php
 
   db:
     image: mysql:latest
