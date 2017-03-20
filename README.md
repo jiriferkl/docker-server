@@ -13,3 +13,8 @@ PHP extension enabled:
 * zip
 * intl
 * bcmath
+
+## Use
+1. Run **build.sh** (This builds containers. You can run it only once.)
+1. Run **up.sh** for start.
+1. Run **exec.sh** if you want to do some stuff in a container.
