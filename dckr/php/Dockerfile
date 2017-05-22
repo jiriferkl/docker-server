@@ -3,7 +3,7 @@ FROM php:apache
 #Installing necessary packages
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y curl git zlib1g-dev libpng-dev libjpeg-dev libfreetype6-dev libjpeg62-turbo-dev libpng12-dev libicu-dev && \
+    apt-get install -y curl git zlib1g-dev libpng-dev libjpeg-dev libfreetype6-dev libjpeg62-turbo-dev libpng12-dev libicu-dev libmcrypt-dev && \
     curl -sL https://deb.nodesource.com/setup_7.x | bash && \
     apt-get install -y nodejs
 
@@ -13,6 +13,7 @@ RUN docker-php-ext-install mysqli && \
     docker-php-ext-install gd && \
     docker-php-ext-install zip && \
     docker-php-ext-install intl && \
+    docker-php-ext-install mcrypt && \
     docker-php-ext-install bcmath
 
 #Setting apache + installing composer
