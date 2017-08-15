@@ -9,6 +9,8 @@ services:
       - db
     ports:
       - 8000:80
+    environment:
+      - NETTE_DEBUG=1
 
   db:
     image: mysql:latest
