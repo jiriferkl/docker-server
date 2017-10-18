@@ -1,0 +1,4 @@
+# DOCTRINE PROBLEM https://stackoverflow.com/questions/35670999/doctrine-querybuilder-order-by-clause-is-not-in-select-list#38169956
+
+[mysqld]
+sql-mode=""
