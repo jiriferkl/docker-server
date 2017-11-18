@@ -4,7 +4,7 @@ FROM php:apache
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y curl git zlib1g-dev libpng-dev libjpeg-dev libfreetype6-dev libjpeg62-turbo-dev libpng12-dev libicu-dev libmcrypt-dev && \
-    curl -sL https://deb.nodesource.com/setup_7.x | bash && \
+    curl -sL https://deb.nodesource.com/setup_8.x | bash && \
     apt-get install -y nodejs
 
 #Enabling php extension
@@ -19,7 +19,7 @@ RUN docker-php-ext-install mysqli && \
 #Setting apache + installing composer
 RUN a2enmod rewrite && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
-    composer global require "hirak/prestissimo:^0.3" && \
+    composer global require "hirak/prestissimo" && \
     composer global require "sllh/composer-versions-check"
 
 #Cleaning mess
